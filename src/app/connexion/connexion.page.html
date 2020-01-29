@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  
+   <!-- Section form>-->
+   <ion-col col-10 offset-1 col-md-6 offset-md-3>
+    <form  method="POST">
+      <ion-row align-items-start>
+        <ion-col col-12>
+          <h1>testons</h1>
+        </ion-col>
+      </ion-row>
+      <!-- Input-field -->
+      <ion-row>
+        <ion-col col-12>
+          <div class="input-field">
+            <!-- Input-field-text -->
+            <ion-item class="ion-no-padding">
+                <ion-label>Username</ion-label>
+              <ion-input type="text" [(ngModel)]="loginUserData.username" name="name" ></ion-input>
+<!--               <ion-label no-margin *ngIf="!isUsernameValid">{{data.errorUser}}</ion-label>
+ -->            </ion-item>
+            <!-- Input-field-password -->
+            <ion-item class="ion-no-padding">
+                <ion-label>Password</ion-label>
+              <ion-input type="password" [(ngModel)]="loginUserData.password" name="name"></ion-input>
+              <!-- <ion-label no-margin *ngIf="!isPasswordValid">{{data.errorPassword}}</ion-label> -->
+            </ion-item>
+          </div> <br>
+          <!-- Login button -->
+          <ion-col col-12 class="ion-no-padding">
+            <button class="no-margin" (click)="loginUser()" ion-button full text-uppercase >Se connecter</button>
+          </ion-col>
+          <!-- Description -->
+     
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-col>        
+</ion-content>
+ 

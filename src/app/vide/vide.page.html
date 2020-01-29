@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>vide</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card strpied-tabled-with-hover">
+                    <div class="card-header ">
+                        <h4 class="card-title">Tableau des Transactions</h4>
+                        <p class="card-category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body table-full-width table-responsive" >
+                            
+                        <table class="table table-hover table-striped" [(ngSwitch)]="relationship">
+                                <ion-list *ngSwitchCase="'envoie'">
+                            <thead>
+                                <th scope="col">Date transaction</th>
+                                <th scope="col">Montant transaction</th>
+                          
+                            </thead>
+                          
+                                <tbody>
+                                    <tr >
+                                      <th scope="row" id="fa">{{ al }}</th>
+                                      <td>{{ bl }} </td>
+                                      <td>{{cl }}</td>
+                                      <td>{{dl }}</td>
+                                      <td>{{el }}</td>
+                                      <td>{{fl }}</td>
+                                      <td>{{gl }}</td>
+                                        </tr>
+                                  </tbody>
+                                </ion-list>
+                        </table>
+                    
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</ion-content>

@@ -49,6 +49,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+            
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -78,7 +79,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "browserTarget": "app:build:production",
+      
             },
             "ci": {
               "progress": false

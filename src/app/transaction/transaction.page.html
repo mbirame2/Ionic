@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>Transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+           
+            <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+            <form method="POST" #f="ngForm" >
+                    <div class="alert alert-primary" role="alert">
+                            {{ argent }}
+                          </div>
+                    <input type="radio" name="opt_rad" id="Envoi" value="Envoi" (click)="showHideEnvoi()">
+                    <label for="Envoi" >ENVOI</label>
+               <input type="radio" name="opt_rad" id="Retrait" value="oui" (click)="showHideRetrait()">
+                <label for="Retrait" >RETRAIT</label>
+             
+                                   
+                        <fieldset id="infoEnvoi">
+                <h2 class="form-title">Envoi Argent</h2>
+                <div class="form-group">
+                    <input [(ngModel)]="loginUserData.montantaverser" name="name" id="name" type="text" class="form-input"   placeholder="Le montant du transfert" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="loginUserData.adresse" name="name" type="text" class="form-input"   placeholder="Adresse du client" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="loginUserData.nomcomplet" type="text" name="name" class="form-input"  placeholder="Nom Complet du client" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="loginUserData.pieceid" type="text" name="name" class="form-input"   placeholder="La carte d'identité du client"/>
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="loginUserData.nomcompletReceveur" type="text" name="name" class="form-input"  placeholder="Le nom complet du receveur" />
+                </div>
+                <div class="form-group">
+                     <input [(ngModel)]="loginUserData.pieceidReceveur" type="text" name="name" class="form-input"  placeholder="La piece d'identite du receveur" />
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="loginUserData.telephone" type="text" name="name" class="form-input"  placeholder="Le numero de telephone du receveur" />
+               </div>
+              
+                <div class="form-group">
+                <button (click)="loginUser()" class="form-submit"  id="submit" type="submit" name="submit">Envoyer</button>
+                </div>
+            </fieldset>
+                <br><br>
+                <fieldset id="infoRetrait">
+                <h2 class="form-title">Retrait Argent</h2>
+                <div class="form-group">
+                    <input [(ngModel)]="loginUserData.coderetrait" name="name" id="name" type="text" class="form-input"   placeholder="Entrez le code transfert" class="form-group col-md-8"/>
+               </div>
+                <br>
+                <button (click)="loginUsertwo()" (click)="topend()" class="form-submit"  id="submit" type="submit" name="submit">Retirer</button>
+            </fieldset>
+            </form>
+         
+        </div>
+    </div>
+</section>
+
+</ion-content>

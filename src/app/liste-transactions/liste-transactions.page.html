@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>liste-transactions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="ion-padding">
+    <ion-segment [(ngModel)]="relationship" color="primary" >
+      <ion-segment-button value="envoie">
+        Date transaction/Montant Transaction
+      </ion-segment-button>
+      <ion-segment-button value="retrait">
+        Date transaction/Comission transaction
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+<ion-content>
+  
+  <div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card strpied-tabled-with-hover">
+                    <div class="card-header ">
+                        <h4 class="card-title">Tableau des Transactions</h4>
+                        <p class="card-category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body table-full-width table-responsive" >
+                            
+                        <table class="table table-hover table-striped" [(ngSwitch)]="relationship">
+                                <ion-list *ngSwitchCase="'envoie'">
+                            <thead>
+                                <th scope="col">Date transaction</th>
+                                <th scope="col">Montant transaction</th>
+                          
+                            </thead>
+                          
+                                <tbody>
+                                    <tr *ngFor="let trans of trans">
+                                      <th scope="row" id="fa">{{ trans.datedelivrance }}</th>
+                                      <td>{{ trans.montantaverser }} </td>
+                                      <td><a (click)="voir(trans.datedelivrance,trans.montantaverser,trans.receveurtarif,trans.nomcomplet,trans.telephone,trans.nomcompletReceveur,trans.pieceidReceveur,trans.pieceid)">Voir</a></td>
+                                        </tr>
+                                  </tbody>
+                                </ion-list>
+                        </table>
+                    
+                    
+                        <table class="table table-hover table-striped" [(ngSwitch)]="relationship">
+                                <ion-list *ngSwitchCase="'retrait'">
+                            <thead>
+                                <th scope="col">Date transaction</th>
+                                <th scope="col">Commission de la transaction</th>
+                          
+                            </thead>
+                          
+                                <tbody>
+                                    <tr *ngFor="let trans of trans">
+                                      <th scope="row" id="fa">{{ trans.datedelivrance}}</th>
+                                      <td>{{ trans.receveurtarif }}</td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </ion-list>
+                        </table>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</ion-content>
